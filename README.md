@@ -9,7 +9,7 @@
 
 MongoDB, ExpressJS, ReactJS, NodeJS.
 
-Cloned my previous repository where I made a full stack trivia quiz. I will rehaul the backend, schema, controllers, and database to store patient assessment and a portal for doctor to log in and review.
+Cloned my previous repository where I made a full stack trivia quiz (https://github.com/OGOZ111/MERN-QUIZ-APP). I will rehaul the backend, schema, controllers, and database to store patient assessment and a portal for doctor to log in and review.
 
 ## Table of Contents
 
