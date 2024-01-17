@@ -27,10 +27,7 @@ export const usePublishResult = async (resultData) => {
       throw new Error("Couldn't get Result");
     }
 
-    await postServerData(
-      `${process.env.REACT_APP_SERVER_HOSTNAME}/api/result`,
-      resultData
-    );
+    await postServerData(`http://localhost:5000/api/result`, resultData);
   } catch (error) {
     console.log(error);
   }

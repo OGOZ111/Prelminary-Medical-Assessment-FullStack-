@@ -25,6 +25,18 @@ export const Result = () => {
   const earnPoints = earnPoints_Number(result, answers, 10);
   const flag = flagResult(totalPoints, earnPoints);
 
+  //added in new argue to getAchievementText, based on earnPoints value to determine text
+
+  const getAchievementText = (earnPoints) => {
+    if (earnPoints < 40) {
+      return "Low";
+    } else if (earnPoints < 70) {
+      return "Medium";
+    } else {
+      return "High";
+    }
+  };
+
   // store user result
 
   usePublishResult({
@@ -62,7 +74,7 @@ export const Result = () => {
         </div>
         <div className="flex">
           <span>Total Points:</span>
-          <span className="bold">{earnPoints || 0}</span>
+          <span className="bold">{getAchievementText(earnPoints)}</span>
         </div>
         <div className="flex">
           <span>Quiz Result</span>
@@ -78,10 +90,6 @@ export const Result = () => {
         <Link className="btn" to={"/"} onClick={onRestart}>
           Restart
         </Link>
-      </div>
-      <div className="containerres">
-        {/**Result table from back end */}
-        <ResultTable />
       </div>
     </div>
   );
