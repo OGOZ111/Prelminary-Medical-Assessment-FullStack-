@@ -53,10 +53,15 @@ export const Result = () => {
   }
   return (
     <div className="container">
-      <h1 className="title text-light">Results</h1>
+      <h1 className="title text-light">Result</h1>
 
       <div className="result flex-center">
         <div className="flex">
+          <p>
+            Thank you {userId} for answering {attempts} of the 10 questions. We
+            have analyzed your case and determined it as{" "}
+            {getAchievementText(earnPoints)}
+          </p>
           <span>Username</span>
           <span className="bold">{userId || ""}</span>
         </div>

@@ -20,38 +20,24 @@ export const MainMenu = () => {
     <div className="container">
       <h1 className="title text-light">Preliminary Assessment</h1>
 
-      <ol>
-        <li>Total of 10 questions</li>
-        <li>Every correct answer is worth 10 points</li>
-        <li>
-          Each question has multiple options. You can choose only one option.
-        </li>
-        <li>Questions begin easy, and get progressively more difficult</li>
-        <li>
-          You can return to any previous questions and change your answers
-        </li>
-        <li>
-          At the end of the quiz, you'll receive a passed or failed result. Your
-          username and score are logged to the Scoreboard
-        </li>
-      </ol>
+      <ol></ol>
       <form id="form">
         <input
           ref={inputRef}
           className="userid"
           type="text"
-          placeholder="Enter username"
+          placeholder="Enter your name"
         />
       </form>
 
       <div className="start">
         <Link onClick={startQuiz} className="btn" to={"quiz"}>
-          Start Quiz
+          Start
         </Link>
       </div>
       <div className="start">
         <Link className="btn" to={"leaderboard"}>
-          Scoreboard
+          Disclaimer
         </Link>
       </div>
     </div>

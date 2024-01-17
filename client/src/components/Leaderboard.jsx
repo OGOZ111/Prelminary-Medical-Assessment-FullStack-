@@ -11,7 +11,17 @@ export const Leaderboard = () => {
         Return to Menu
       </Link>
       <div className="container">
-        <ResultTable />
+        <p>
+          Disclaimer: This application is a simulation and is provided for my
+          software development display project ONLY. It is not intended to
+          replace professional medical advice, diagnosis, or treatment. Always
+          seek the advice of your physician or other qualified health provider
+          with any questions you may have regarding a medical condition. Never
+          disregard professional medical advice or delay in seeking it because
+          of something you have read or simulated in this application. Always do
+          your own research and consult with your doctor before making any
+          medical decisions.
+        </p>
       </div>
     </div>
   );
