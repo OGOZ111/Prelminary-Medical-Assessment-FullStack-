@@ -81,7 +81,7 @@ export default function Quiz() {
         )}
 
         <button className="btn next" onClick={onNext}>
-          Next
+          {trace === queue.length - 1 ? "Complete" : "Next"}
         </button>
       </div>
     </div>

@@ -18,7 +18,7 @@ export const MainMenu = () => {
 
   return (
     <div className="container">
-      <h1 className="title text-light">Finnish Trivia App</h1>
+      <h1 className="title text-light">Preliminary Assessment</h1>
 
       <ol>
         <li>Total of 10 questions</li>
