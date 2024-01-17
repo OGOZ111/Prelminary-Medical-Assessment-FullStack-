@@ -66,3 +66,14 @@ table {
 .table-body tr:hover {
   background-color: #555;
 }
+
+.res-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-loading {
+  font-size: 1.5em;
+  color: #4ab44f;
+}

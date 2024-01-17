@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Questions from "./Questions";
 import { MoveNextQuestion, MovePrevQuestion } from "../hooks/FetchQuestion";
 import { PushAnswer } from "../hooks/setResult";
+import { BeatLoader } from "react-spinners";
 
 //redux store import
 
@@ -9,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 export default function Quiz() {
+  const [loading, setLoading] = useState(false);
   const [check, setChecked] = useState(undefined);
   const result = useSelector((state) => state.result.result);
   const { queue, trace } = useSelector((state) => state.questions);
@@ -17,16 +19,24 @@ export default function Quiz() {
   //Button event handler for next  button
   function onNext() {
     if (trace < queue.length) {
-      // Update the trace value by +1, which moves to the next index in the array of questions using move next action
-      dispatch(MoveNextQuestion());
-
-      // insert a new result in the array
       if (result.length <= trace) {
         dispatch(PushAnswer(check));
       }
+
+      // Check if it's the last question
+      if (trace === queue.length - 1) {
+        setLoading(true); // Set loading to true before the delay
+
+        // Simulate a delay with setTimeout
+        setTimeout(() => {
+          setLoading(false); // Set loading to false after the delay
+          dispatch(MoveNextQuestion());
+        }, 6000);
+      } else {
+        dispatch(MoveNextQuestion());
+      }
     }
 
-    //reset value of the checked value
     setChecked(undefined);
   }
 
@@ -41,9 +51,8 @@ export default function Quiz() {
     setChecked(check);
   }
 
-  // finished exam after last question
-  if (result.length && result.length >= queue.length) {
-    return <Navigate to={"/result"} replace="true"></Navigate>;
+  if (result.length && result.length >= queue.length && !loading) {
+    return <Navigate to={"/result"} replace={true} />;
   }
 
   // Insert the trace value into the JSX to display the current question number, +1 bc index starts at 0
@@ -52,6 +61,12 @@ export default function Quiz() {
       <h1 className="title text-light">
         Question {trace + 1} of {queue.length}
       </h1>
+      {loading && (
+        <div className="res-loading">
+          <BeatLoader color="#ffffff" loading={loading} />
+          <p className="text-loading">Analyzing your symptoms...</p>
+        </div>
+      )}
 
       {/*display question*/}
       <Questions onChecked={onChecked} />
