@@ -1,0 +1,57 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #cecece;
+  padding: 2em;
+  gap: 1em;
+}
+
+.container .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container .flex span {
+  font-size: 1.2em;
+  color: #cecece;
+}
+
+.container .flex span.achive {
+  font-weight: bold;
+  color: #2aff95;
+}
+
+table {
+  width: 100%;
+}
+
+.table-header {
+  color: #cecece;
+  font-size: 1.1em;
+  text-align: center;
+  background: #212121;
+  padding: 1em;
+}
+
+.table-body {
+  font-size: 1.1em;
+  text-align: center;
+  background: #d8d8d8;
+  padding: 1em;
+}
+
+.table-header > tr > td {
+  border: 1px solid #faff5a;
+}
+
+@media screen and (min-width: 600px) {
+  .flex-center {
+    padding: 3em 4em;
+  }
+
+  .container .flex span {
+    font-size: 1.4em;
+  }
+}

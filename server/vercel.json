@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/questions",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/api/result",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ],
+  "build": {
+    "commands": ["npm install"],
+    "use": "@now/node"
+  }
+}

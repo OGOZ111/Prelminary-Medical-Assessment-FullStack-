@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --primary-color: #0dff92;
+  --dark-color: #222222;
+  --light-color: #f0f0f0;
+}
+
+body,
+html {
+  height: 100%;
+  background: var(--dark-color);
+}
+
+* > * {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: block;
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.container .title {
+  font-size: 2em;
+  text-align: center;
+  border: 3px solid var(--primary-color);
+  padding: 0.2em 0.1em;
+  border-radius: 4px;
+}
+
+.text-light {
+  color: var(--light-color);
+}
+
+.container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.container .questions {
+  padding: 2em;
+}
+
+.container .grid {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.container .btn {
+  padding: 0.2em 1em;
+  font-size: 1em;
+}
+
+ul li {
+  height: auto;
+}
+
+ul li label {
+  font-size: 1em;
+  padding: 15px;
+}
+
+ul li .check {
+  height: 15px;
+  width: 15px;
+  top: 15px;
+  left: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    width: 80%;
+  }
+
+  .container .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
