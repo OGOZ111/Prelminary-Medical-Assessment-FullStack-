@@ -179,3 +179,10 @@ input[type="radio"]:checked ~ .text-primary {
 .checked::before {
   background: var(--primary-color);
 }
+
+.disclaimer-text {
+  font-size: 1.2em;
+  color: #f0f0f0;
+  text-align: center;
+  margin-top: 2em;
+}

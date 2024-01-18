@@ -28,9 +28,9 @@ export const Result = () => {
   //added in new argue to getAchievementText, based on earnPoints value to determine text
 
   const getAchievementText = (earnPoints) => {
-    if (earnPoints < 40) {
+    if (earnPoints < 30) {
       return "Low";
-    } else if (earnPoints < 70) {
+    } else if (earnPoints < 60) {
       return "Medium";
     } else {
       return "High";
@@ -53,14 +53,14 @@ export const Result = () => {
   }
   return (
     <div className="container">
-      <h1 className="title text-light">Result</h1>
+      <h1 className="title text-light">Assessment Complete</h1>
 
       <div className="result flex-center">
         <div className="flex">
-          <p>
-            Thank you {userId} for answering {attempts} of the 10 questions. We
-            have analyzed your case and determined it as{" "}
-            {getAchievementText(earnPoints)}
+          <p className="bold">
+            Thank you {userId} for completing the assessment. Based on {""}
+            {attempts} out of 10 questions you have answered, We have analyzed
+            your case and determined it as {getAchievementText(earnPoints)}
           </p>
           <span>Username</span>
           <span className="bold">{userId || ""}</span>

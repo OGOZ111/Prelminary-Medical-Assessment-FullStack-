@@ -11,7 +11,7 @@ export const Leaderboard = () => {
         Return to Menu
       </Link>
       <div className="container">
-        <p>
+        <p className="disclaimer-text">
           Disclaimer: This application is a simulation and is provided for my
           software development display project ONLY. It is not intended to
           replace professional medical advice, diagnosis, or treatment. Always
