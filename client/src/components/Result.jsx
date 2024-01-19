@@ -30,7 +30,7 @@ export const Result = () => {
   const getAchievementText = (earnPoints) => {
     if (earnPoints < 30) {
       return "Low";
-    } else if (earnPoints < 60) {
+    } else if (earnPoints < 50) {
       return "Medium";
     } else {
       return "High";
@@ -59,7 +59,7 @@ export const Result = () => {
         <div className="flex">
           <p className="bold">
             Thank you {userId} for completing the assessment. Based on {""}
-            {attempts} out of 10 questions you have answered, We have analyzed
+            {attempts} out of 8 questions you have answered, We have analyzed
             your case and determined it as {getAchievementText(earnPoints)}
           </p>
           <span>Username</span>

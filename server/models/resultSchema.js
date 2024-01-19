@@ -8,9 +8,8 @@ const resultModel = new Schema({
   attempts: { type: Number, default: 0 },
   points: { type: Number, default: 0 },
   achieved: { type: String, default: "" },
-  //name: { type: String, required: true }, // Add name property
-  //dob: { type: Date, required: true }, // Add date of birth property
-  //email: { type: String, required: true },
+  dob: { type: Date, default: "", required: false },
+  email: { type: String, default: "", required: false },
   createdAt: { type: Date, default: Date.now },
 });
 

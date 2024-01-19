@@ -53,7 +53,8 @@ export async function getResult(req, res) {
 // post all results
 export async function storeResult(req, res) {
   try {
-    const { username, result, attempts, points, achieved } = req.body;
+    const { username, result, attempts, points, achieved, dob, email } =
+      req.body;
 
     if (!username || !result) {
       throw new Error("Incomplete data provided...!");
@@ -65,6 +66,8 @@ export async function storeResult(req, res) {
       attempts,
       points,
       achieved,
+      dob,
+      email,
     });
 
     res.json({ msg: "Result Saved Successfully...!", data });
