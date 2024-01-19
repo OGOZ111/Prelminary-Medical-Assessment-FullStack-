@@ -50,11 +50,13 @@ export async function getResult(req, res) {
 
 // post all results
 
+// post all results
 export async function storeResult(req, res) {
   try {
     const { username, result, attempts, points, achieved } = req.body;
-    if (!username && !result) {
-      throw new Error("Data Not Provided...!");
+
+    if (!username || !result) {
+      throw new Error("Incomplete data provided...!");
     }
 
     const data = await Results.create({

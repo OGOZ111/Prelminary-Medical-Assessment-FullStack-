@@ -1,7 +1,5 @@
 import "../styles/App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Snowfall from "react-snowfall";
-
 // Import components
 import { MainMenu } from "./MainMenu";
 import Quiz from "./Quiz";
