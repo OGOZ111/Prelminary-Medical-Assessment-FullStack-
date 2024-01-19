@@ -4,11 +4,19 @@ export const resultReducer = createSlice({
   name: "result",
   initialState: {
     userId: null,
+    email: null,
+    dob: null,
     result: [],
   },
   reducers: {
     setUserId: (state, action) => {
       state.userId = action.payload;
+    },
+    setEmail: (state, action) => {
+      state.email = action.payload;
+    },
+    setDOB: (state, action) => {
+      state.dob = action.payload;
     },
     pushResultAction: (state, action) => {
       state.result.push(action.payload);
@@ -20,6 +28,8 @@ export const resultReducer = createSlice({
     resetResultAction: () => {
       return {
         userId: null,
+        email: null,
+        dob: null,
         result: [],
       };
     },
@@ -28,6 +38,8 @@ export const resultReducer = createSlice({
 
 export const {
   setUserId,
+  setEmail,
+  setDOB,
   pushResultAction,
   resetResultAction,
   updateResultAction,

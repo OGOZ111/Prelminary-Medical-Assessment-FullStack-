@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/Result.css";
 import { Link } from "react-router-dom";
-import { ResultTable } from "./ResultTable";
 import { useDispatch, useSelector } from "react-redux";
 // import actions to reset values for restart game
 
@@ -42,7 +41,8 @@ export const Result = () => {
   usePublishResult({
     result,
     username: userId,
-    attempts,
+    email: useSelector((state) => state.result.email),
+    dob: useSelector((state) => state.result.dob),
     points: earnPoints,
     achieved: flag ? "Passed" : "Failed",
   });

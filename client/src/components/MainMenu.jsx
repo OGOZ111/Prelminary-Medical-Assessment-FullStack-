@@ -2,17 +2,25 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MainMenu.css";
 import { useDispatch } from "react-redux";
-import { setUserId } from "../redux/result_reducer";
+import { setUserId, setEmail, setDOB } from "../redux/result_reducer";
 
 export const MainMenu = () => {
-  const inputRef = useRef(null);
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const dobRef = useRef(null);
 
   const dispatch = useDispatch();
 
-  // Checks if there is user input in the name inut field and dispatches the user id to the redux store
+  // Checks if there is user input in the fields and dispatches the user id to the redux store
   function startQuiz() {
-    if (inputRef.current?.value) {
-      dispatch(setUserId(inputRef.current?.value));
+    const name = nameRef.current?.value;
+    const email = emailRef.current?.value;
+    const dob = dobRef.current?.value;
+
+    if (name && email && dob) {
+      dispatch(setUserId(name));
+      dispatch(setEmail(email));
+      dispatch(setDOB(dob));
     }
   }
 
@@ -23,10 +31,22 @@ export const MainMenu = () => {
       <ol></ol>
       <form id="form">
         <input
-          ref={inputRef}
+          ref={nameRef}
           className="userid"
           type="text"
           placeholder="Enter your name"
+        />
+        <input
+          ref={emailRef}
+          className="userid"
+          type="email"
+          placeholder="Enter your email"
+        />
+        <input
+          ref={dobRef}
+          className="userid"
+          type="date"
+          placeholder="Enter your date of birth"
         />
       </form>
 
