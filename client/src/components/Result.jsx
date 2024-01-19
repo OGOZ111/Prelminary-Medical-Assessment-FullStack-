@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "../styles/Result.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import actions to reset values for restart game
+// import actions to reset values for restart
 
 import { resetAllAction } from "../redux/question_reducer";
 import { resetResultAction } from "../redux/result_reducer";
@@ -43,6 +43,7 @@ export const Result = () => {
     username: userId,
     email: useSelector((state) => state.result.email),
     dob: useSelector((state) => state.result.dob),
+    gender: useSelector((state) => state.result.gender),
     points: earnPoints,
     achieved: flag ? "Passed" : "Failed",
   });

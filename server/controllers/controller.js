@@ -53,7 +53,7 @@ export async function getResult(req, res) {
 // post all results
 export async function storeResult(req, res) {
   try {
-    const { username, result, attempts, points, achieved, dob, email } =
+    const { username, result, attempts, points, achieved, dob, email, gender } =
       req.body;
 
     if (!username || !result) {
@@ -68,6 +68,7 @@ export async function storeResult(req, res) {
       achieved,
       dob,
       email,
+      gender,
     });
 
     res.json({ msg: "Result Saved Successfully...!", data });

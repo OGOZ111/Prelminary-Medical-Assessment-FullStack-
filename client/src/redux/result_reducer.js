@@ -6,6 +6,7 @@ export const resultReducer = createSlice({
     userId: null,
     email: null,
     dob: null,
+    gender: null,
     result: [],
   },
   reducers: {
@@ -17,6 +18,10 @@ export const resultReducer = createSlice({
     },
     setDOB: (state, action) => {
       state.dob = action.payload;
+    },
+
+    setGender: (state, action) => {
+      state.gender = action.payload;
     },
     pushResultAction: (state, action) => {
       state.result.push(action.payload);
@@ -40,6 +45,7 @@ export const {
   setUserId,
   setEmail,
   setDOB,
+  setGender,
   pushResultAction,
   resetResultAction,
   updateResultAction,

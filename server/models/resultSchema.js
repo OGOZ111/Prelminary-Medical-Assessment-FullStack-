@@ -10,6 +10,7 @@ const resultModel = new Schema({
   achieved: { type: String, default: "" },
   dob: { type: Date, default: "", required: false },
   email: { type: String, default: "", required: false },
+  gender: { type: String, default: "", required: false },
   createdAt: { type: Date, default: Date.now },
 });
 

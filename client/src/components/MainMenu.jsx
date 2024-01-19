@@ -2,12 +2,18 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MainMenu.css";
 import { useDispatch } from "react-redux";
-import { setUserId, setEmail, setDOB } from "../redux/result_reducer";
+import {
+  setUserId,
+  setEmail,
+  setDOB,
+  setGender,
+} from "../redux/result_reducer";
 
 export const MainMenu = () => {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const dobRef = useRef(null);
+  const genderRef = useRef(null);
 
   const dispatch = useDispatch();
 
@@ -16,11 +22,13 @@ export const MainMenu = () => {
     const name = nameRef.current?.value;
     const email = emailRef.current?.value;
     const dob = dobRef.current?.value;
+    const gender = genderRef.current?.value;
 
     if (name && email && dob) {
       dispatch(setUserId(name));
       dispatch(setEmail(email));
       dispatch(setDOB(dob));
+      dispatch(setGender(gender));
     }
   }
 
@@ -48,6 +56,14 @@ export const MainMenu = () => {
           type="date"
           placeholder="Enter your date of birth"
         />
+        <select ref={genderRef} className="userid" defaultValue="">
+          <option value="" disabled>
+            Select your gender
+          </option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
       </form>
 
       <div className="start">
