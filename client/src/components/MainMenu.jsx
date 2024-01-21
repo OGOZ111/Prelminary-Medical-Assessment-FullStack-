@@ -38,32 +38,60 @@ export const MainMenu = () => {
 
       <ol></ol>
       <form id="form">
-        <input
-          ref={nameRef}
-          className="userid"
-          type="text"
-          placeholder="Enter your name"
-        />
-        <input
-          ref={emailRef}
-          className="userid"
-          type="email"
-          placeholder="Enter your email"
-        />
-        <input
-          ref={dobRef}
-          className="userid"
-          type="date"
-          placeholder="Enter your date of birth"
-        />
-        <select ref={genderRef} className="userid" defaultValue="">
-          <option value="" disabled>
-            Select your gender
-          </option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
+        <div>
+          <label className="main-labels">Name</label>
+          <input
+            id="name"
+            ref={nameRef}
+            className="userid"
+            type="text"
+            placeholder="Enter your name"
+          />
+          <span id="nameError" className="error"></span>
+        </div>
+
+        <div>
+          <label className="main-labels">Email</label>
+          <input
+            id="email"
+            ref={emailRef}
+            className="userid"
+            type="email"
+            placeholder="Enter your email"
+          />
+          <span id="emailError" className="error"></span>
+        </div>
+
+        <div>
+          <label className="main-labels">Date of Birth</label>
+          <input
+            id="dob"
+            ref={dobRef}
+            className="userid"
+            type="date"
+            placeholder="Enter your date of birth"
+          />
+          <span id="dobError" className="error"></span>
+        </div>
+
+        <div>
+          <label className="main-labels">Gender</label>
+          <select
+            id="gender"
+            ref={genderRef}
+            className="userid"
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Select your gender
+            </option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            <option value="Prefer Not to Answer">Prefer Not to Answer</option>
+          </select>
+          <span id="genderError" className="error"></span>
+        </div>
       </form>
 
       <div className="start">
