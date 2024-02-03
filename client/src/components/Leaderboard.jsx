@@ -1,5 +1,4 @@
 import React from "react";
-import { ResultTable } from "./ResultTable";
 import { Link } from "react-router-dom";
 import "../styles/Leadboard.css";
 
@@ -7,9 +6,6 @@ import "../styles/Leadboard.css";
 export const Leaderboard = () => {
   return (
     <div>
-      <Link className="btn" to={"/"}>
-        Return to Menu
-      </Link>
       <div className="container">
         <p className="disclaimer-text">
           Disclaimer: This application is a simulation and is provided for my
@@ -22,6 +18,9 @@ export const Leaderboard = () => {
           your own research and consult with your doctor before making any
           medical decisions.
         </p>
+        <Link className="btn" to={"/"}>
+          Return to Menu
+        </Link>
       </div>
     </div>
   );

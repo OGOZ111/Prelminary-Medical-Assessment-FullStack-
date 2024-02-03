@@ -7,7 +7,7 @@ import Zoom from "@mui/material/Zoom";
 import { useFetchQestion } from "../hooks/FetchQuestion";
 import { updateResult } from "../hooks/setResult";
 
-export default function Questions({ onChecked }) {
+export default function Questions({ onChecked, disabled }) {
   const [checked, setChecked] = useState(undefined);
   const { trace } = useSelector((state) => state.questions);
   const result = useSelector((state) => state.result.result);
@@ -23,15 +23,13 @@ export default function Questions({ onChecked }) {
     dispatch(updateResult({ trace, checked }));
   }, [checked]);
 
-  // Runs function when user selects an answer, or goes back and changes an answer, and dispatches the result to the redux store
-
   function onSelect(i) {
-    onChecked(i);
-    setChecked(i);
-    dispatch(updateResult({ trace, checked }));
+    if (!disabled) {
+      onChecked(i);
+      setChecked(i);
+      dispatch(updateResult({ trace, checked: i }));
+    }
   }
-
-  // display loading message while fetching data from server
 
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
   if (serverError)
@@ -56,6 +54,7 @@ export default function Questions({ onChecked }) {
                   name="options"
                   id={`q${i}-option`}
                   onChange={() => onSelect(i)}
+                  disabled={disabled}
                 />
                 <label className="text-primary" htmlFor={`q${i}-option`}>
                   {q}
