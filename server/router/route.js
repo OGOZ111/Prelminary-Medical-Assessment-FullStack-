@@ -15,8 +15,8 @@ router
 
 router
   .route("/result")
-  .get(controller.getResult)
-  .post(controller.storeResult)
-  .delete(controller.dropResult);
+  .get(controller.getResult) // GET request
+  .post(controller.storeResult) // POST request
+  .delete(controller.dropResult); // DELETE request
 
 export default router;

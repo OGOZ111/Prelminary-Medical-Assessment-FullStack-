@@ -1,6 +1,8 @@
 import * as Action from "../redux/result_reducer";
 import { postServerData } from "../helper/helper";
 
+const baseUrl = import.meta.env.VITE_API_URL;
+
 // insert result into redux, into answers array.
 export const PushAnswer = (result) => async (dispatch) => {
   try {
@@ -10,6 +12,7 @@ export const PushAnswer = (result) => async (dispatch) => {
   }
 };
 
+// update result into redux, into answers array.
 export const updateResult = (index) => async (dispatch) => {
   try {
     dispatch(Action.updateResultAction(index));
@@ -27,7 +30,7 @@ export const usePublishResult = async (resultData) => {
       throw new Error("Couldn't get Result");
     }
 
-    await postServerData(`http://localhost:5000/api/result`, resultData);
+    await postServerData(`${baseUrl}/api/result`, resultData);
   } catch (error) {
     console.log(error);
   }

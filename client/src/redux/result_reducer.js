@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// createSlice is a function that accepts an object with the following properties:
+
 export const resultReducer = createSlice({
   name: "result",
   initialState: {

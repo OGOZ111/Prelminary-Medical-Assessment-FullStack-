@@ -45,7 +45,6 @@ export const Result = () => {
     dob: useSelector((state) => state.result.dob),
     gender: useSelector((state) => state.result.gender),
     points: earnPoints,
-    achieved: flag ? "Passed" : "Failed",
   });
 
   function onRestart() {

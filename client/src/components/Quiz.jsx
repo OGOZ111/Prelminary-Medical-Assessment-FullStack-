@@ -6,11 +6,9 @@ import { BeatLoader } from "react-spinners";
 import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-// ... (imports)
-
 export default function Quiz() {
   const [loading, setLoading] = useState(false);
-  const [check, setChecked] = useState(undefined);
+  const [check, setChecked] = useState(undefined); //
   const [disableButton, setDisableButton] = useState(false);
   const [disableOptions, setDisableOptions] = useState(false);
   const [hideQuestion, setHideQuestion] = useState(false);

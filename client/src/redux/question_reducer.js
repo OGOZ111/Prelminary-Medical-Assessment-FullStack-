@@ -10,6 +10,7 @@ export const questionReducer = createSlice({
   },
   reducers: {
     startExamAction: (state, action) => {
+      // following function updates the queue and answers array with the questions and answers
       let { question, answers } = action.payload;
       return {
         ...state,
@@ -27,12 +28,14 @@ export const questionReducer = createSlice({
     },
 
     movePrevAction: (state) => {
+      // following function updates the trace value for the index of the questions in array
       return {
         ...state,
         trace: state.trace - 1,
       };
     },
     resetAllAction: () => {
+      // following function resets the state to initial value
       return {
         queue: [],
         answers: [],
