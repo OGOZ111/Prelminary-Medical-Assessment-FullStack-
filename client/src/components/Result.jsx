@@ -28,11 +28,11 @@ export const Result = () => {
 
   const getAchievementText = (earnPoints) => {
     if (earnPoints < 30) {
-      return "Low";
+      return "Your reported symptoms are on the lower side. Excellent! We're here to support your health journey. If you have any concerns, feel free to discuss them during your appointment.";
     } else if (earnPoints < 50) {
-      return "Medium";
+      return "Thank you for providing detailed information. Your medium symptoms have been documented, and we're ready to assist you further during your appointment. Your well-being matters to us.";
     } else {
-      return "High";
+      return "Thank you for providing detailed information about your symptoms. Your high symptoms have been noted, and our team is dedicated to working with you to ensure your health needs are met";
     }
   };
 
@@ -58,38 +58,13 @@ export const Result = () => {
 
       <div className="result flex-center">
         <div className="flex">
-          <p className="bold">
+          <p className="disclaimer-text">
             Thank you {userId} for completing the assessment. Based on {""}
             {attempts} out of 8 questions you have answered, We have analyzed
-            your case and determined it as {getAchievementText(earnPoints)}
+            your results based on the information provided.{" "}
+            {getAchievementText(earnPoints)}. Your information has been logged
+            securely. We're ready for your appointment!
           </p>
-          <span>Username</span>
-          <span className="bold">{userId || ""}</span>
-        </div>
-        <div className="flex">
-          <span>Max possible points: </span>
-          <span className="bold">{totalPoints || 0}</span>
-        </div>
-        <div className="flex">
-          <span>Total Questions: </span>
-          <span className="bold">{queue.length || 0}</span>
-        </div>
-        <div className="flex">
-          <span>Total Answered: </span>
-          <span className="bold">{attempts || 0}</span>
-        </div>
-        <div className="flex">
-          <span>Total Points:</span>
-          <span className="bold">{getAchievementText(earnPoints)}</span>
-        </div>
-        <div className="flex">
-          <span>Quiz Result</span>
-          <span
-            style={{ color: `${flag ? "#2aff95" : "#ff2a66"}` }}
-            className="bold"
-          >
-            {flag ? "Passed" : "Failed"}
-          </span>
         </div>
       </div>
       <div className="start">

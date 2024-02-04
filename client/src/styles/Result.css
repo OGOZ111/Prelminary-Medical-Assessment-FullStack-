@@ -77,3 +77,14 @@ table {
   font-size: 1.5em;
   color: #4ab44f;
 }
+
+.disclaimer-text {
+  background-color: rgba(
+    118,
+    121,
+    117,
+    0.8
+  ); /* Adjust the alpha (fourth value) for the desired level of transparency */
+  border-radius: 20px;
+  padding: 10px; /* Optional: Add some padding for better spacing */
+}

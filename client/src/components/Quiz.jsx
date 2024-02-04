@@ -67,7 +67,7 @@ export default function Quiz() {
       {loading && (
         <div className="res-loading">
           <BeatLoader color="#ffffff" loading={loading} />
-          <p className="text-loading">Analyzing your symptoms...</p>
+          <p className="text-loading">Analyzing Results...</p>
         </div>
       )}
 
