@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Leadboard.css";
 
-// Leaderboard component that displays table of results from the database
+// Disclaimer: component to display disclaimer and return to menu button and replaced previous Leaderboard component
 export const Leaderboard = () => {
   return (
     <div>

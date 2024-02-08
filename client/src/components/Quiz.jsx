@@ -16,11 +16,14 @@ export default function Quiz() {
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
 
+  // Move to the next question
   function onNext() {
     if (trace < queue.length) {
       if (result.length <= trace) {
         dispatch(PushAnswer(check));
       }
+
+      // If the current question is the last question, disable the next button and enable the loading spinner
 
       if (trace === queue.length - 1) {
         setDisableButton(true);
@@ -28,6 +31,7 @@ export default function Quiz() {
         setLoading(true);
         setHideQuestion(true);
 
+        // Set a timeout to move to the result page, simulation UX.
         setTimeout(() => {
           setLoading(false);
           setHideQuestion(false);
@@ -41,18 +45,20 @@ export default function Quiz() {
     setChecked(undefined);
   }
 
+  // Move to the previous question
   function onPrev() {
     if (trace > 0) {
       dispatch(MovePrevQuestion());
     }
   }
+  // Set the checked value
 
   function onChecked(check) {
     if (!disableOptions) {
       setChecked(check);
     }
   }
-
+  // If the result is greater than or equal to the length of the queue, navigate to the result page
   if (result.length && result.length >= queue.length && !loading) {
     return <Navigate to={"/result"} replace={true} />;
   }

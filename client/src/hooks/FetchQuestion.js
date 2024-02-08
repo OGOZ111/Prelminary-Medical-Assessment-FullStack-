@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getServerData } from "../helper/helper";
 
-const baseUrl = import.meta.env.VITE_API_URL;
+const URL = import.meta.env.VITE_API_URL;
 
 /** redux actions */
 import * as Action from "../redux/question_reducer";
@@ -23,7 +23,7 @@ export const useFetchQestion = () => {
     (async () => {
       try {
         const [{ questions, answers }] = await getServerData(
-          `${baseUrl}/api/questions`,
+          `${URL}/api/questions`,
           (data) => data
         );
 

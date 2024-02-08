@@ -9,6 +9,7 @@ import {
   setGender,
 } from "../redux/result_reducer";
 
+// MainMenu: component to display the main menu and user input fields
 export const MainMenu = () => {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -24,6 +25,7 @@ export const MainMenu = () => {
     const dob = dobRef.current?.value;
     const gender = genderRef.current?.value;
 
+    // If the user has entered a name, email, and date of birth, dispatch  to the redux store
     if (name && email && dob) {
       dispatch(setUserId(name));
       dispatch(setEmail(email));

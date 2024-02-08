@@ -47,6 +47,7 @@ export const Result = () => {
     points: earnPoints,
   });
 
+  // reset all values for restart
   function onRestart() {
     dispatch(resetAllAction());
     dispatch(resetResultAction());

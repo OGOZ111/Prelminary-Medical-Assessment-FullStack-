@@ -13,16 +13,20 @@ export default function Questions({ onChecked, disabled }) {
   const result = useSelector((state) => state.result.result);
   const [{ isLoading, apiData, serverError }] = useFetchQestion();
 
+  // Get the questions from the store
   const questions = useSelector(
     (state) => state.questions.queue[state.questions.trace]
   );
 
+  // Dispatch the updated result to the store
   const dispatch = useDispatch();
 
+  // Update the result in the store
   useEffect(() => {
     dispatch(updateResult({ trace, checked }));
   }, [checked]);
 
+  // Set the checked value
   function onSelect(i) {
     if (!disabled) {
       onChecked(i);
