@@ -9,7 +9,7 @@
 
 MongoDB, ExpressJS, ReactJS, NodeJS.
 
-Cloned my previous repository where I made a full stack trivia quiz (https://github.com/OGOZ111/MERN-QUIZ-APP), refactored all components, changed database, schemas, controllers. The app mimics that off a medical grade app that collects patient data pre appointment about their symptoms, personal details (dummy data), loading responses, read write to database, middlewares, protected routes, encrypted results, animations, server confirmations. 
+Cloned my previous repository where I made a full stack trivia quiz (https://github.com/OGOZ111/MERN-QUIZ-APP), refactored all components, changed database, schemas, controllers. The app mimics that off a medical grade app that collects patient data pre appointment about their symptoms, personal details (dummy data), loading responses, read write to database, middlewares, protected routes, encrypted results, trace of index, return to prev question and change answer, questions can be skipped with zero input with null, animations, server confirmations. 
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ Cloned my previous repository where I made a full stack trivia quiz (https://git
 - [Usage](#usage)
 
 
-## Installation
+
 
 ## Features
 
@@ -30,14 +30,13 @@ Cloned my previous repository where I made a full stack trivia quiz (https://git
 - Animation will play that delays the confirmation screen, giving time for the response, and seamless movement bewtween components.
 - Confirmation message returns users name, inputs for confirmation, and message that logging results to DB was successful. 
 
-
+## Installation
 
 ```bash
 npm install
 ```
 
 ## Usage
-
 
 
 ```bash
