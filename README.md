@@ -1,4 +1,4 @@
-# Prelminary Medical Assessment FullStack Web App w/ Doctors portal.
+# Prelminary Medical Assessment FullStack Web App w/ Doctors login portal.
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
@@ -27,7 +27,7 @@ Cloned my previous repository where I made a full stack trivia quiz (https://git
 - Answers are now multiple choice, more than just YES/No, encrypted to an index number, decrypted on the doctors portal.
 - On final question, next button changes to complete.
 - Clicking complete, removes and disables user from any further changes while the server is being contacted.
-- Animation will play that delays the confirmation screen, giving time for the response, and seamless movement bewtween components.
+- Animation will play that delays the confirmation screen, giving time for the response, and seamless movement between components.
 - Confirmation message returns users name, inputs for confirmation, and message that logging results to DB was successful. 
 
 ## Installation
