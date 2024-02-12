@@ -9,17 +9,28 @@
 
 MongoDB, ExpressJS, ReactJS, NodeJS.
 
-Cloned my previous repository where I made a full stack trivia quiz (https://github.com/OGOZ111/MERN-QUIZ-APP). I will rehaul the backend, schema, controllers, and database to store patient assessment and a portal for doctor to log in and review.
+Cloned my previous repository where I made a full stack trivia quiz (https://github.com/OGOZ111/MERN-QUIZ-APP), refactored all components, changed database, schemas, controllers. The app mimics that off a medical grade app that collects patient data pre appointment about their symptoms, personal details (dummy data), loading responses, read write to database, middlewares, protected routes, encrypted results, animations, server confirmations. 
 
 ## Table of Contents
 
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
+
 
 ## Installation
 
-Provide step-by-step instructions on how to install your project.
+## Features
+
+- Refined interface, with lightweight glass effect that is responsive to mobile. 
+- Small non intrusive animations from React library.
+- Answers are now multiple choice, more than just YES/No, encrypted to an index number, decrypted on the doctors portal.
+- On final question, next button changes to complete.
+- Clicking complete, removes and disables user from any further changes while the server is being contacted.
+- Animation will play that delays the confirmation screen, giving time for the response, and seamless movement bewtween components.
+- Confirmation message returns users name, inputs for confirmation, and message that logging results to DB was successful. 
+
+
 
 ```bash
 npm install
@@ -27,10 +38,10 @@ npm install
 
 ## Usage
 
-Provide step-by-step instructions on how to install your project.
+
 
 ```bash
 npm run dev
 ```
 
-## Features
+
