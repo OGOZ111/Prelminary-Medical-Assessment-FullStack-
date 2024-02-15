@@ -1,5 +1,3 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=OGOZ111_Prelminary-Medical-Assessment-FullStack-&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=OGOZ111_Prelminary-Medical-Assessment-FullStack-)
-
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=OGOZ111_Prelminary-Medical-Assessment-FullStack-)](https://sonarcloud.io/summary/new_code?id=OGOZ111_Prelminary-Medical-Assessment-FullStack-)
 
 # Prelminary Medical Assessment FullStack Web App w/ Doctors login portal.
